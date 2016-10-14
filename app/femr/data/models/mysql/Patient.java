@@ -40,6 +40,8 @@ public class Patient implements IPatient {
     private String lastName;
     @Column(name = "age")
     private Date age;
+    @Column(name = "is_age_real")
+    private boolean isAgeReal;
     @Column(name = "sex", nullable = true)
     private String sex;
     @Column(name = "address", nullable = true)

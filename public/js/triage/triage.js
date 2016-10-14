@@ -528,6 +528,7 @@ $(document).ready(function () {
     //birthday shit
     $('#age').change(function () {
         //set age is guess = 0
+        $('#isAgeReal').val(true);
         var inputYear = $('#age').val().split('-')[0];
         var inputMonth = $('#age').val().split('-')[1] - 1;
         var inputDay = $('#age').val().split('-')[2];
@@ -571,6 +572,7 @@ $(document).ready(function () {
             if (nan === false) {
                 $('#age').val(birthString);
                 //add is age guess = 1
+                $('#isAgeReal').val(false);
                 $('#years').css('border', '');
                 $('#months').css('border', '');
                 $('#age').css('border', '');
@@ -585,6 +587,7 @@ $(document).ready(function () {
             if (nan === false) {
                 $('#age').val(birthString);
                 //add is age guess = 1
+                $('#isAgeReal').val(false);
                 $('#years').css('border', '');
                 $('#months').css('border', '');
                 $('#age').css('border', '');
