@@ -105,6 +105,12 @@ public class Patient implements IPatient {
     }
 
     @Override
+    public boolean getIsAgeReal() { return isAgeReal; }
+
+    @Override
+    public void setIsAgeReal(boolean isAgeReal) { this.isAgeReal = isAgeReal; }
+
+    @Override
     public String getSex() {
         return sex;
     }

@@ -44,6 +44,10 @@ public interface IPatient {
 
     void setAge(Date age);
 
+    boolean getIsAgeReal();
+
+    void setIsAgeReal(boolean isAgeReal);
+
     String getSex();
 
     void setSex(String sex);

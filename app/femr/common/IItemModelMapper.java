@@ -100,6 +100,7 @@ public interface IItemModelMapper {
                                   String address,
                                   int userId,
                                   Date age,
+                                  boolean isAgeReal,
                                   String sex,
                                   Integer weeksPregnant,
                                   Integer heightFeet,
