@@ -293,6 +293,7 @@ var diabeticScreeningFeature = {
         triageFields.patientInformation.firstName.prop('readonly', true);
         triageFields.patientInformation.lastName.prop('readonly', true);
         triageFields.patientInformation.age.prop('readonly', true);
+        triageFields.patientInformation.isAgeReal.prop('readonly', true);
         triageFields.patientInformation.years.prop('readonly', true);
         triageFields.patientInformation.months.prop('readonly', true);
         triageFields.patientInformation.city.prop('readonly', true);
@@ -372,6 +373,7 @@ var triageFields = {
         firstName: $('#firstName'),
         lastName: $('#lastName'),
         age: $('#age'),//doesn't work for an existing patient
+        isAgeReal: $('#isAgeReal'),
         years: $('#years'),
         months: $('#months'),
         ageClassification: $('[name=ageClassification]'),
@@ -527,8 +529,6 @@ $(document).ready(function () {
     });
     //birthday shit
     $('#age').change(function () {
-        //set age is guess = 0
-        $('#isAgeReal').val(true);
         var inputYear = $('#age').val().split('-')[0];
         var inputMonth = $('#age').val().split('-')[1] - 1;
         var inputDay = $('#age').val().split('-')[2];
@@ -546,6 +546,7 @@ $(document).ready(function () {
                 if (diffDay < 0) {
                     ageMonths--;
                 }
+                $('input[name=isAgeReal]').val("true");
                 $('#years').val(Math.floor(ageMonths / 12));
                 $('#months').val(ageMonths % 12);
                 $('#years').css('border', '');
@@ -571,8 +572,7 @@ $(document).ready(function () {
             var nan = randomString(birthDate);
             if (nan === false) {
                 $('#age').val(birthString);
-                //add is age guess = 1
-                $('#isAgeReal').val(false);
+                $('input[name=isAgeReal]').val("false");
                 $('#years').css('border', '');
                 $('#months').css('border', '');
                 $('#age').css('border', '');
@@ -586,8 +586,7 @@ $(document).ready(function () {
             var nan = randomString(birthDate);
             if (nan === false) {
                 $('#age').val(birthString);
-                //add is age guess = 1
-                $('#isAgeReal').val(false);
+                $('input[name=isAgeReal]').val("false");
                 $('#years').css('border', '');
                 $('#months').css('border', '');
                 $('#age').css('border', '');

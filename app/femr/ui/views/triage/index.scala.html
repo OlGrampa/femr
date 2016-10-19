@@ -60,6 +60,7 @@
                 <div id="ageClassificationWrap">
                     <label>Age<span class="red bold">*</span></label>
                     @inputAge("Age", "Years", "years", "Months", "months", if(viewModel != null) viewModel.getPatient else null)
+                    <input type="hidden" name="isAgeReal" value="" />
                     <span class="orSpan">OR</span>
                     @inputDate("Birth Date", "age", if(viewModel != null) viewModel.getPatient.getBirth else null)
                     <span class="orSpan">OR</span>
